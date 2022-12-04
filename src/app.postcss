@@ -1,0 +1,25 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  @layer base {
+    a {
+      @apply text-light-accent dark:text-dark-accent;
+    }
+    body {
+      @apply bg-light-primary dark:bg-dark-primary
+    }
+    @font-face {
+      font-family: "Dosis";
+      src: /* Modern Browsers */ url("/assets/fonts/Dosis-Medium.woff") format("woff"),
+        /* Open Type Font */ url("/assets/fonts/Dosis-Medium.ttf") format("truetype"); /* Safari, Android, iOS */
+      font-weight: normal;
+      font-style: normal;
+      text-rendering: optimizeLegibility;
+      font-display: auto;
+    }
+    html {
+      @apply font-dosis;
+    }
+  } ;
