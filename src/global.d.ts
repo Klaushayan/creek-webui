@@ -28,6 +28,12 @@ interface UserProperties {
 
 type User = UserProperties | undefined | null;
 
+
+type Server = {
+  host: string;
+  port: number;
+};
+
 interface UserSession {
   id: string;
   user: User;
