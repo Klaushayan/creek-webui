@@ -1,6 +1,6 @@
 <script></script>
 
-<footer class="bg-light-secondary text-light-primary dark:bg-dark-secondary">
+<footer class="fixed inset-x-0 bottom-0 bg-light-secondary text-light-primary dark:bg-dark-secondary">
   <div
     class="py-6 px-4 md:flex flex-row md:items-center md:justify-between"
   >
