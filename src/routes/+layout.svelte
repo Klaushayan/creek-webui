@@ -4,6 +4,8 @@
   import { loginSession } from "../stores";
   import { beforeNavigate, goto } from "$app/navigation";
   import { onMount } from "svelte";
+  import Navbar from "../components/Navbar.svelte";
+  import Footer from "../components/Footer.svelte";
 
   export let data: LayoutServerData;
   // If returning from different website, runs once (as it's an SPA) to restore user session if session cookie is still valid
@@ -33,5 +35,6 @@
   }
 </script>
 
-
-<slot />
+<Navbar/>
+<slot/>
+<Footer/>
