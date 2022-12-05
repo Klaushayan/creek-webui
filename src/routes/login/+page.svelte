@@ -4,7 +4,7 @@
   import { page } from '$app/stores'
   import { loginSession } from '../../stores'
   import { focusOnFirstError } from '../../helpers/focus'
-  import LoginModal from 'src/components/LoginModal.svelte'
+  import LoginModal from '../../components/LoginModal.svelte'
   let focusedField: HTMLInputElement
   let message: string
   const credentials: Credentials = {
