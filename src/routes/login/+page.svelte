@@ -5,9 +5,11 @@
   import { loginSession } from '../../stores'
   import { focusOnFirstError } from '../../helpers/focus'
   import LoginModal from '../../components/LoginModal.svelte'
+  import ServerModal from "../../components/ServerModal.svelte";
+
   let focusedField: HTMLInputElement
   let message: string
-  const credentials: Credentials = {
+  let credentials: Credentials = {
     username: '',
     password: ''
   }
@@ -43,11 +45,6 @@
 			const fromEndpoint = await res.json()
 			if (res.ok) {
 				loginSession.set(fromEndpoint.user)
-				const { role } = fromEndpoint.user
-        const referrer = $page.url.searchParams.get('referrer')
-				if (referrer) return goto(referrer)
-				if (role === 'teacher') return goto('/teachers')
-				if (role === 'admin') return goto('/admin')
 				return goto('/')
 			} else {
 				throw new Error(fromEndpoint.message)
@@ -66,7 +63,15 @@
   <meta name='robots' content='noindex, nofollow'/>
 </svelte:head>
 
-<LoginModal/>
+<LoginModal
+  formId="signIn"
+  focusedFieldId="username"
+  on:submit={login}
+  bind:focusedField
+  bind:message
+  bind:credentials
+/>
+<ServerModal/>
 
 <style>
 </style>
