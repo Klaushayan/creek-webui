@@ -10,7 +10,6 @@
   // TODO: check this for performance
   export let id: string = Math.random().toString(36).substring(7);
 
-  let showError: boolean = false;
   let visibility: string = "hidden";
 
   function onInput(event: Event) {
@@ -25,6 +24,7 @@
       input.classList.add("border-red-500");
       visibility = "block";
     }
+    value = input.value;
   }
 </script>
 
